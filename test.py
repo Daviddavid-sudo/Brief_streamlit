@@ -35,12 +35,13 @@ def write_to_json(filename, new_data):
         
 def start_game():
     st.write_stream(st.session_state.questions['questions'][st.session_state.index])
-    responses_dict = st.session_state.questions['questions'][st.session_state.index].values()
+    responses_dict = st.session_state.questions['questions'][st.session_state.index]
     option = []
-    st.write(responses_dict)
-    # for keys in responses_dict.keys():
-    #     st.write(keys)
-    #     for responses in responses_dict.values():
+    for x in responses_dict.values():
+        for y in responses_dict.values():
+            st.write(y)
+            for keys in y:
+                st.write(y[keys][0])
             # option.append(responses[0])
 
     # selected_choice = st.radio(
@@ -50,10 +51,7 @@ def start_game():
 
     if right_button:
         st.session_state.index +=1
-        st.rerun
-
-    
-        
+        st.rerun()
 
 if left_button and st.session_state.clicked:
     question_text = st.text_input("Enter Question")
