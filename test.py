@@ -39,15 +39,13 @@ def start_game():
     option = []
     for x in responses_dict.values():
         for y in responses_dict.values():
-            st.write(y)
             for keys in y:
-                st.write(y[keys][0])
-            # option.append(responses[0])
+                option.append(y[keys][0])
 
-    # selected_choice = st.radio(
-    #         "Choose a reponse",
-    #         options=option
-    #         )
+    selected_choice = st.radio(
+            "Choose a reponse",
+            options=option
+            )
 
     if right_button:
         st.session_state.index +=1
