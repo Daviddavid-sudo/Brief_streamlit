@@ -1,46 +1,32 @@
 [
     {
-        "question": "1+1",
+        "question": "1+2",
         "responses": [
             "2",
+            "5",
+            "7",
             "3"
         ],
-        "answer": "2"
+        "answer": "3"
     },
     {
-        "question": "2+5",
+        "question": "4+9",
         "responses": [
-            "3",
+            "13",
             "5",
-            "7"
+            "7",
+            "3"
         ],
-        "answer": "7"
+        "answer": "13"
     },
     {
-        "question": "1-1",
+        "question": "7-7",
         "responses": [
+            "13",
             "0",
-            "4",
-            "7"
+            "7",
+            "3"
         ],
         "answer": "0"
-    },
-    {
-        "question": "7+0",
-        "responses": [
-            "7",
-            "6",
-            "8"
-        ],
-        "answer": "7"
-    },
-    {
-        "question": "4+2",
-        "responses": [
-            "2",
-            "6",
-            "7"
-        ],
-        "answer": "6"
     }
 ]

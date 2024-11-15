@@ -11,15 +11,39 @@ class Quiz(BaseModel):
 
     @field_validator('question')
     def validate_question(cls, value):
+        """_summary_
+
+        Args:
+            value (_type_): _description_
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
         if not value:
             raise ValueError("The question cannot be empty")
         return value
     
+
     @field_validator('responses')
     def validate_answers(cls, value):
+        """_summary_
+
+        Args:
+            value (_type_): _description_
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
         if not value:
             raise ValueError("The responses cannot be empty")
         return value
+
 
 def main_page():
     """_summary_
