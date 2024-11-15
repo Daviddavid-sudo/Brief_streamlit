@@ -42,9 +42,27 @@ if not st.session_state.finished:
 else:
     st.title('Results')
     score =  "Questions correctly answered: " + str(st.session_state.score) + "/" + str(st.session_state.index)
-    st.write(score)
-    st.session_state.index = 0
-    st.session_state.score = 0
-    st.session_state.finished = False
-    if st.button("Try Again", use_container_width=True):
-        st.rerun()
+    if st.session_state.score==0:
+        st.image("images/ramsey.jpg")
+        st.error(score)
+        st.session_state.index = 0
+        st.session_state.score = 0
+        st.session_state.finished = False
+        if st.button("Try Again", use_container_width=True):
+            st.rerun()
+    elif st.session_state.score==st.session_state.index and st.session_state.score != 0:
+        st.balloons()
+        st.image("images/happy.jpg")
+        st.success(score)
+        st.session_state.index = 0
+        st.session_state.score = 0
+        st.session_state.finished = False
+        if st.button("Try Again", use_container_width=True):
+            st.rerun()
+    else:
+        st.session_state.index = 0
+        st.session_state.score = 0
+        st.session_state.finished = False
+        st.warning(score)
+        if st.button("Try Again", use_container_width=True):
+            st.rerun()
