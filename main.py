@@ -64,7 +64,7 @@ if t:
     for i in range(len(textsplit)):
         responses.append(textsplit[i])
     
-    number = st.number_input("Correct response", step=1, max_value=len(textsplit))
+    number = st.number_input("Correct response", step=1, max_value=len(textsplit), min_value=1)
     data = {"question": question_text, "responses": responses, "answer": responses[number-1]}
 
 if st.button("Add question", use_container_width=True):
