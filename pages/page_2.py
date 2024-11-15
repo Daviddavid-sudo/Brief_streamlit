@@ -6,7 +6,7 @@ st.sidebar.markdown("Page 3")
 st.title('Quiz V2')
 
 if 'questions' not in st.session_state:
-    with open('data2.json', 'r') as f:
+    with open('data.json', 'r') as f:
         st.session_state.questions = json.load(f)
     st.session_state.index = 0
     st.session_state.score = 0

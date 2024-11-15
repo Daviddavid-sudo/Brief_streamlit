@@ -1,6 +1,12 @@
 import streamlit as st
 import json
 import os
+from pydantic import BaseModel
+
+class Question(BaseModel):
+    question_text: str
+    responses: list[str]
+    anwser: list[int]
 
 def main_page():
     """_summary_
@@ -18,7 +24,7 @@ def page2():
 
 page_names_to_funcs = {
     "Create Quiz": main_page,
-    "Try Out Quiz": page3,
+    "Try Out Quiz": page2,
 }
 
 st.title('Create Quiz')
@@ -63,5 +69,5 @@ if t:
 
 if st.button("Add question", use_container_width=True):
     st.write('Question added')
-    write_to_json('data2.json', data)
+    write_to_json('data.json', data)
 
