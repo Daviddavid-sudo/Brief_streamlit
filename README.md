@@ -67,4 +67,5 @@ The `data.json` file will be updated with each new question in the following str
 ## Future Improvements
 
 - **Add Themes**: Allows for more specfic domaine questions.
+- **History**: Shows the user a history of all their quiz results.
 - **Scalability**: The next step will be to expand our data base, instead of storing a json into a file. We shall store multiple jsons in multiple files, which are organized by theme. As well as, choosing which questionnaire we would like to add to, since we are limited with just one json.
