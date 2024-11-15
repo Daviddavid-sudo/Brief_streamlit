@@ -19,6 +19,9 @@ A web application built with Streamlit that allows users to create quizzes and s
    ```bash
    pip install streamlit
    ```
+   ```bash
+   pip install pydantic
+   ```
    
 ## Running the Application
 
