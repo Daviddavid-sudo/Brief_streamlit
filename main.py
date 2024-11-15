@@ -29,12 +29,12 @@ page_names_to_funcs = {
 
 st.title('Create Quiz')
 
-def write_to_json(filename: str, new_data: dict[list[list]]):
+def write_to_json(filename: str, new_data: dict):
     """_summary_
 
     Args:
         filename (str): _description_
-        new_data (dict[list[list]]): _description_
+        new_data (dict): _description_
     """
     if not os.path.exists(filename):
         with open(filename, 'w') as f:
