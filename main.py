@@ -2,6 +2,7 @@ import streamlit as st
 import json
 import os
 from pydantic import BaseModel, field_validator, model_validator, ValidationError
+import time
 
 class Quiz(BaseModel):
     question: str
@@ -33,10 +34,16 @@ def page2():
     st.markdown('Quiz')
     st.sidebar.markdown('Quiz')
 
+def page3():
+    """_summary_
+    """
+    st.markdown('History')
+    st.sidebar.markdown('History')
 
 page_names_to_funcs = {
     "Create Quiz": main_page,
     "Try Out Quiz": page2,
+    "History": page3,
 }
 
 st.title('Create Quiz')
@@ -64,6 +71,7 @@ def write_to_json(filename: str, new_data: dict):
     with open(filename, 'w') as f:
         json.dump(file_data, f, indent=4)
 
+
 question_text = st.text_input("Enter Question")
 st.write(question_text)
 responses = []
@@ -90,6 +98,9 @@ if st.button("Add question", use_container_width=True):
         )
         st.write('Question added')
         write_to_json('data.json', data)
+        time.sleep(3)
+        st.rerun()
+
     except ValidationError as e:
         st.error(f"Error:  {e}")
 

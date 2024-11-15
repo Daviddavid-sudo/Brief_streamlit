@@ -2,8 +2,8 @@ import streamlit as st
 import json
 import time
 
-st.sidebar.markdown("Page 3")
-st.title('Quiz V2')
+st.sidebar.markdown("Page 2")
+st.title('Quiz')
 
 if 'questions' not in st.session_state:
     with open('data.json', 'r') as f:
