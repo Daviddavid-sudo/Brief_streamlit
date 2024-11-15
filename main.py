@@ -9,7 +9,7 @@ def main_page():
     st.sidebar.markdown('Create Quiz')
 
 
-def page3():
+def page2():
     """_summary_
     """
     st.markdown('Quiz')
