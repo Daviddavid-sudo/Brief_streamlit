@@ -1,7 +1,6 @@
 import streamlit as st
 import json
 import os
-import pydantic
 
 def main_page():
     """_summary_
@@ -10,7 +9,7 @@ def main_page():
     st.sidebar.markdown('Create Quiz')
 
 
-def page2():
+def page3():
     """_summary_
     """
     st.markdown('Quiz')
@@ -19,7 +18,7 @@ def page2():
 
 page_names_to_funcs = {
     "Create Quiz": main_page,
-    "Try Out Quiz": page2,
+    "Try Out Quiz": page3,
 }
 
 st.title('Create Quiz')
@@ -33,19 +32,18 @@ def write_to_json(filename: str, new_data: dict[list[list]]):
     """
     if not os.path.exists(filename):
         with open(filename, 'w') as f:
-            json.dump({"questions": []}, f)
+            json.dump([], f)
     
     with open(filename, 'r') as f:
         try:
             file_data = json.load(f)
         except json.JSONDecodeError:
-            file_data = {"questions": []}
+            file_data = []
 
-    file_data["questions"].append(new_data)
+    file_data.append(new_data)
 
     with open(filename, 'w') as f:
         json.dump(file_data, f, indent=4)
-
 
 question_text = st.text_input("Enter Question")
 st.write(question_text)
@@ -58,12 +56,12 @@ for i in range(len(textsplit)):
     st.write(str(i+1) + ": "+ textsplit[i])
 if t:
     for i in range(len(textsplit)):
-        responses.append([textsplit[i], False])
-
-data = {question_text: responses}
-number = st.number_input("Correct response", step=1, max_value=len(textsplit))
+        responses.append(textsplit[i])
+    
+    number = st.number_input("Correct response", step=1, max_value=len(textsplit))
+    data = {"question": question_text, "responses": responses, "answer": responses[number-1]}
 
 if st.button("Add question", use_container_width=True):
     st.write('Question added')
-    data[question_text][number-1][1] =  True
-    write_to_json('data.json', data)
+    write_to_json('data2.json', data)
+
