@@ -9,7 +9,8 @@ A web application built with Streamlit that allows users to create quizzes and s
 
 ## Prerequisites
 - Python 3.7 or higher
-- Streamlit
+- Streamlit 1.40.1
+- pydantic 2.9.2
 
 ## Setup Instructions
 
