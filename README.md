@@ -19,6 +19,9 @@ A web application built with Streamlit that allows users to create quizzes and s
    ```bash
    pip install streamlit
    ```
+   ```bash
+   pip install pydantic
+   ```
    
 ## Running the Application
 
@@ -62,9 +65,11 @@ The `data.json` file will be updated with each new question in the following str
 
 - **`write_to_json` function**: Handles reading from and writing to the `data.json` file, appending each new question.
 - **Main Page**: Allows users to add questions and responses interactively.
-- **Secondary Page (Quiz)**: Placeholder for trying out quizzes (feature in development).
+- **Secondary Page (Quiz)**: Allows users to respond to questions that were added from the main page.
 
 ## Future Improvements
 
 - **Add Themes**: Allows for more specfic domaine questions.
+- **History**: Shows the user a history of all their quiz results.
 - **Scalability**: The next step will be to expand our data base, instead of storing a json into a file. We shall store multiple jsons in multiple files, which are organized by theme. As well as, choosing which questionnaire we would like to add to, since we are limited with just one json.
+- **Flat Files**: The limits of a flat files the app is duplicate questions, and so in the questionnaire if someone adds the same question twice, it appears twice in the quiz.
