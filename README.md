@@ -65,7 +65,7 @@ The `data.json` file will be updated with each new question in the following str
 
 - **`write_to_json` function**: Handles reading from and writing to the `data.json` file, appending each new question.
 - **Main Page**: Allows users to add questions and responses interactively.
-- **Secondary Page (Quiz)**: Placeholder for trying out quizzes (feature in development).
+- **Secondary Page (Quiz)**: Allows users to respond to questions that were added from the main page.
 
 ## Future Improvements
 
