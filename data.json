@@ -24,5 +24,23 @@
             "7"
         ],
         "answer": "0"
+    },
+    {
+        "question": "7+0",
+        "responses": [
+            "7",
+            "6",
+            "8"
+        ],
+        "answer": "7"
+    },
+    {
+        "question": "4+2",
+        "responses": [
+            "2",
+            "6",
+            "7"
+        ],
+        "answer": "6"
     }
 ]
