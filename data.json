@@ -6,5 +6,12 @@
             "3"
         ],
         "answer": "3"
+    },
+    {
+        "question": "1+2",
+        "responses": [
+            "3"
+        ],
+        "answer": "3"
     }
 ]

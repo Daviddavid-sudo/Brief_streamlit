@@ -1,12 +1,24 @@
 import streamlit as st
 import json
 import os
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator, model_validator, ValidationError
 
-class Question(BaseModel):
-    question_text: str
+class Quiz(BaseModel):
+    question: str
     responses: list[str]
-    anwser: list[int]
+    anwser: int
+
+    @field_validator('question')
+    def validate_question(cls, value):
+        if not value:
+            raise ValueError("The question cannot be empty")
+        return value
+    
+    @field_validator('responses')
+    def validate_answers(cls, value):
+        if not value:
+            raise ValueError("The responses cannot be empty")
+        return value
 
 def main_page():
     """_summary_
@@ -28,6 +40,7 @@ page_names_to_funcs = {
 }
 
 st.title('Create Quiz')
+number = 0
 
 def write_to_json(filename: str, new_data: dict):
     """_summary_
@@ -67,7 +80,17 @@ if t:
     number = st.number_input("Correct response", step=1, max_value=len(textsplit), min_value=1)
     data = {"question": question_text, "responses": responses, "answer": responses[number-1]}
 
+
 if st.button("Add question", use_container_width=True):
-    st.write('Question added')
-    write_to_json('data.json', data)
+    try:
+        quiz_data = Quiz(
+            question=question_text,
+            responses=responses,
+            anwser=number
+        )
+        st.write('Question added')
+        write_to_json('data.json', data)
+    except ValidationError as e:
+        st.error(f"Error:  {e}")
+
 
