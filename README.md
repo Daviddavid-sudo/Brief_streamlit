@@ -72,4 +72,4 @@ The `data.json` file will be updated with each new question in the following str
 - **Add Themes**: Allows for more specfic domaine questions.
 - **History**: Shows the user a history of all their quiz results.
 - **Scalability**: The next step will be to expand our data base, instead of storing a json into a file. We shall store our data in a database and use sql to query though themes. 
-- **Flat Files**: The limits of a flat files the app is duplicate questions, and so in the questionnaire if someone adds the same question twice, it appears twice in the quiz.
+- **Flat Files**: The limits of a flat files the app is duplicate questions, and so in the questionnaire if someone adds the same question twice, it appears twice in the quiz. As well as, querying is much more complicated in flat files than relational database.
